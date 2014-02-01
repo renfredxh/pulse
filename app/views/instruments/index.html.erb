@@ -1,9 +1,12 @@
-<h1>Instruments</h1>
-<% @instruments.each do |instrument| %>
-  <div class="instrument">
-    <div class="title"><%= instrument.name %></div>
-    <div class="trigger-pad <%= instrument.category %>" 
-      data-audio="<%= instrument.samples[0].path %>" id="<%= instrument.id %>"></div>
-  </div>
-<% end %>
-<%= javascript_include_tag "pads" %>
+<div class="row">
+    <div class="small-12 columns">
+      <h1>Instruments</h1>
+      <% @instruments.each do |instrument| %>
+        <div class="instrument">
+          <div class="title"><%= instrument.name %></div>
+          <div class="trigger-pad <%= instrument.category %>" 
+            data-audio="<%= instrument.samples[0].path %>" id="<%= instrument.id %>"></div>
+        </div>
+      <% end %>
+    </div>
+</div>
