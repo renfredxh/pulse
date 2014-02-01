@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require modernizr
+//= require buzz
+//= require_tree .
 $(document).foundation();
