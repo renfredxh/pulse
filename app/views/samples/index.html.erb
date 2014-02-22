@@ -18,9 +18,9 @@
         <tr>
           <td><%= sample.path %></td>
           <td><%= sample.instrument_id %></td>
-          <td>      
+          <td>
               <audio controls="controls">
-                  <source src="<%= sample.path %>" type="audio/wav"/>
+                  <source src="<%= sample.path %>.wav" type="audio/wav"/>
               </audio></td>
           <td><%= link_to 'Show', sample %></td>
           <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
