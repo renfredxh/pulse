@@ -6,6 +6,8 @@ function playAudio(element) {
   element.sample.play();
 }
 
-$('.trigger-pad').click(function() {
-  playAudio(this);
+$(document).ready(function() {
+    $('.trigger-pad').click(function() {
+    playAudio(this);
+  });
 });
