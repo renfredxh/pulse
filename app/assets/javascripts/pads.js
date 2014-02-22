@@ -1,7 +1,9 @@
 function playAudio(element) {
   if (element.sample === undefined) {
-    var sample = new Audio(element.dataset.audio);
-    element.sample = sample
+    var newSample = new buzz.sound(element.dataset.audio, {
+          formats: [ "ogg", "mp3", "wav" ]
+    });
+    element.sample = newSample;
   }
   element.sample.play();
 }
