@@ -1,39 +1,42 @@
-<h1>Instruments</h1>
+<%= content_for :admin_content do %>
+  <h1>Instruments</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>ID</th>
-      <th>Samples</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @instruments.each do |instrument| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= instrument.name %></td>
-        <td><%= instrument.category %></td>
-        <td><%= instrument.id %></td>
-        <td>
-          <% instrument.samples.each do |sample| %>
-            <audio controls="controls">
-                <source src="<%= sample.path %>" type="audio/wav"/>
-            </audio>
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', instrument %></td>
-        <td><%= link_to 'Edit', edit_instrument_path(instrument) %></td>
-        <td><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Category</th>
+        <th>ID</th>
+        <th>Samples</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @instruments.each do |instrument| %>
+        <tr>
+          <td><%= instrument.name %></td>
+          <td><%= instrument.category %></td>
+          <td><%= instrument.id %></td>
+          <td>
+            <% instrument.samples.each do |sample| %>
+              <audio controls="controls">
+                  <source src="<%= sample.path %>" type="audio/wav"/>
+              </audio>
+            <% end %>
+          </td>
+          <td><%= link_to 'Show', instrument %></td>
+          <td><%= link_to 'Edit', edit_instrument_path(instrument) %></td>
+          <td><%= link_to 'Destroy', instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Instrument', new_instrument_path %>
+  <br>
+
+  <%= link_to 'New Instrument', new_instrument_path %>
+<% end %>
+<%= render template: "layouts/admin" %>

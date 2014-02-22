@@ -1,6 +1,9 @@
-<h1>Editing kit</h1>
+<% content_for :admin_content do %>
+  <h1>Editing kit</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @kit %> |
-<%= link_to 'Back', kits_path %>
+  <%= link_to 'Show', @kit %> |
+  <%= link_to 'Back', kits_path %>
+<% end %>
+<%= render template: "layouts/admin" %>

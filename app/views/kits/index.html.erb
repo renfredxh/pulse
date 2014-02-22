@@ -1,27 +1,26 @@
-<h1>Listing kits</h1>
+<% content_for :admin_content do %>
+  <h1>Listing kits</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @kits.each do |kit| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= kit.name %></td>
-        <td><%= link_to 'Show', kit %></td>
-        <td><%= link_to 'Edit', edit_kit_path(kit) %></td>
-        <td><%= link_to 'Destroy', kit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @kits.each do |kit| %>
+        <tr>
+            <td><%= link_to 'Show', kit %></td>
+          <td><%= link_to 'Edit', edit_kit_path(kit) %></td>
+          <td><%= link_to 'Destroy', kit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Kit', new_kit_path %>
+  <br>
+
+  <%= link_to 'New Kit', new_kit_path %>
+<% end %>
+<%= render template: "layouts/admin" %>

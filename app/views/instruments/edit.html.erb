@@ -1,6 +1,9 @@
-<h1>Editing instrument</h1>
+<%= content_for :admin_content do %>
+  <h1>Editing instrument</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @instrument %> |
-<%= link_to 'Back', instruments_path %>
+  <%= link_to 'Show', @instrument %> |
+  <%= link_to 'Back', instruments_path %>
+<% end %>
+<%= render template: "layouts/admin" %>
