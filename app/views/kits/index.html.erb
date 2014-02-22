@@ -1,0 +1,27 @@
+<h1>Listing kits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kits.each do |kit| %>
+      <tr>
+        <td><%= kit.name %></td>
+        <td><%= link_to 'Show', kit %></td>
+        <td><%= link_to 'Edit', edit_kit_path(kit) %></td>
+        <td><%= link_to 'Destroy', kit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kit', new_kit_path %>
