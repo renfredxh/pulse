@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-# Ignore audio files.
-/public/samples
+# Ignore media files.
+/public/media/
