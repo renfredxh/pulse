@@ -17,8 +17,11 @@
 //= require underscore
 //= require backbone
 //= require buzz
+//= require_tree ./pulse-app/models
+//= require_tree ./pulse-app/collections
+//= require_tree ./pulse-app/views
 //= require_tree .
 // The following object is a global app object that can
 // be used to store variables needed globally
-var pulse = {};
+var pulse = pulse || {};
 $(function(){ $(document).foundation(); });
