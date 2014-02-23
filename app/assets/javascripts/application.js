@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require underscore
+//= require backbone
 //= require buzz
 //= require_tree .
 // The following object is a global app object that can
