@@ -1,5 +1,7 @@
 Pulse::Application.routes.draw do
-  resources :kits
+  resources :kits do
+    get :admin, on: :collection
+  end
 
   resources :instruments do
     get :admin, on: :collection

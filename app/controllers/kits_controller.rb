@@ -1,9 +1,19 @@
 class KitsController < ApplicationController
   before_action :set_kit, only: [:show, :edit, :update, :destroy]
 
+  # Only allow admin access to views that modify kits
+  username = Rails.application.config.admin_username
+  password = Rails.application.config.admin_password
+  http_basic_authenticate_with name: username, password: password,
+except: [:index, :show]
+
   # GET /kits
   # GET /kits.json
   def index
+    @kits = Kit.all
+  end
+
+  def admin
     @kits = Kit.all
   end
 
