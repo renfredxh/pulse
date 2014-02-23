@@ -1,3 +1,4 @@
 class Kit < ActiveRecord::Base
-  has_and_belongs_to_many :instruments
+  has_many :setups
+  has_many :instruments, through: :setups
 end
