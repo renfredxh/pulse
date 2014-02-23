@@ -19,8 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 # Use foundation as the 
-gem 'compass-rails'
-gem 'zurb-foundation'
+gem 'compass'
+gem 'foundation-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

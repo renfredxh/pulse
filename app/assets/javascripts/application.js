@@ -20,4 +20,4 @@
 // The following object is a global app object that can
 // be used to store variables needed globally
 var pulse = {};
-$(document).foundation();
+$(function(){ $(document).foundation(); });
