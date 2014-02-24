@@ -6,8 +6,8 @@ pulse.AppView = Backbone.View.extend({
   el: '#kit',
 
   initialize: function() {
-    this.listenTo(pulse.Instruments, 'add', this.addOne);
-    this.listenTo(pulse.Instruments, 'reset', this.addAll);
+    this.listenTo(pulse.Kit, 'add', this.addOne);
+    this.listenTo(pulse.Kit, 'reset', this.addAll);
   },
 
   addOne: function(instrument) {
@@ -15,10 +15,10 @@ pulse.AppView = Backbone.View.extend({
     this.$el.append( view.render().el );
   },
 
-  // Add all items in the **Todos** collection at once.
+  // Add all instruments in the Kit collection at once.
   addAll: function() {
     this.$el.html('');
-    pulse.Instruments.each(this.addOne, this);
+    pulse.Kit.each(this.addOne, this);
   }
 
 });

@@ -1,6 +1,7 @@
 var pulse = pulse || {};
 
-var InstrumentSet = Backbone.Collection.extend({
+// A kit is a collection of instruments
+var Kit = Backbone.Collection.extend({
 
   // Reference to this collection's model.
   model: pulse.Instrument,
@@ -8,5 +9,4 @@ var InstrumentSet = Backbone.Collection.extend({
 });
 
 // Global instrument collection
-pulse.Instruments = new InstrumentSet();
-pulse.InstrumentSet = InstrumentSet;
+pulse.Kit = new Kit();

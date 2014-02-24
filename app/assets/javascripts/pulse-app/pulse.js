@@ -3,7 +3,7 @@ $(document).ready(function() {
   $.getJSON("/kits/1.json", function(data){
     kit = data;
   }).done(function() {
-    pulse.Instruments.reset(kit.instruments);
+    pulse.Kit.reset(kit.instruments);
   });
 
   $(function() {
