@@ -1,0 +1,17 @@
+<%= form_for(@rhythm) do |f| %>
+  <% if @rhythm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rhythm.errors.count, "error") %> prohibited this rhythm from being saved:</h2>
+
+      <ul>
+      <% @rhythm.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
