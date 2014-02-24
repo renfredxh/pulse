@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223235002) do
+ActiveRecord::Schema.define(version: 20140224030322) do
 
   create_table "DrumSets_Instruments", id: false, force: true do |t|
     t.integer "instrument_id", null: false
@@ -36,6 +36,28 @@ ActiveRecord::Schema.define(version: 20140223235002) do
   end
 
   create_table "kits", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notes", force: true do |t|
+    t.integer  "pattern_id"
+    t.integer  "position"
+    t.integer  "volume"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patterns", force: true do |t|
+    t.integer  "rhythm_id"
+    t.integer  "row"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rhythms", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
