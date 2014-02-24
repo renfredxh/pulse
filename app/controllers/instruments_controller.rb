@@ -22,8 +22,7 @@ except: [:index, :show]
     respond_to do |format|
       format.html
       format.json { render json: @instrument.to_json(
-        include: { samples: { except: [:created_at, :updated_at, :id] } }, 
-        except: [:created_at, :updated_at, :id]
+        except: [:created_at, :updated_at]
       ) }
     end
   end
@@ -85,6 +84,6 @@ except: [:index, :show]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instrument_params
-      params.require(:instrument).permit(:name, :category)
+      params.require(:instrument).permit(:name, :category, :sample)
     end
 end

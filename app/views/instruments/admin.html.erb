@@ -7,7 +7,8 @@
         <th>Name</th>
         <th>Category</th>
         <th>ID</th>
-        <th>Samples</th>
+        <th>Sample</th>
+        <th>Preview</th>
         <th></th>
         <th></th>
         <th></th>
@@ -20,12 +21,11 @@
           <td><%= instrument.name %></td>
           <td><%= instrument.category %></td>
           <td><%= instrument.id %></td>
+          <td><%= instrument.sample %></td>
           <td>
-            <% instrument.samples.each do |sample| %>
-              <audio controls="controls">
-                  <source src="<%= sample.path %>" type="audio/wav"/>
-              </audio>
-            <% end %>
+            <audio controls="controls">
+              <source src="<%= instrument.sample %>.wav" type="audio/wav"/>
+            </audio>
           </td>
           <td><%= link_to 'Show', instrument %></td>
           <td><%= link_to 'Edit', edit_instrument_path(instrument) %></td>
