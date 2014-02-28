@@ -1,3 +1,6 @@
+#kit {
+  margin-top: 2rem;
+}
 .instrument {
   height: 3.8rem;
   display: flex;
@@ -6,8 +9,25 @@
   text-align: center;
   background-color: #333333;
   color: #ffffff;
-  border-bottom: solid #141414 2px;
+  border-bottom: solid #141414 4px;
   p {
     margin-bottom: 0;
+  }
+}
+.notes {
+  margin-bottom: 0;
+}
+.note {
+  width: 6.15%;
+  height: 3.4rem;
+  display: inline-block;
+  box-padding: border-box;
+
+  .note-inner {
+    height: 100%;
+    margin: .2rem .2rem;
+    border: solid 2px #164B7A;
+    border-radius: 6px;
+    background-color: #67BEF0;
   }
 }

@@ -6,8 +6,15 @@ $(document).ready(function() {
     pulse.Kit.reset(kit.instruments);
   });
 
+  pulse.noteGroupViews = [];
+  $.getJSON("/rhythms/2.json").done(function(data) {
+    $.each(data.columns, function(idx, column) {
+      var noteGroup = new pulse.NoteGroup(column.notes);
+      pulse.noteGroupViews.push(new pulse.NoteGroupView({collection: noteGroup}));
+    });
+  });
+
   $(function() {
-    // Kick things off by creating the **App**.
     new pulse.AppView();
   });
 

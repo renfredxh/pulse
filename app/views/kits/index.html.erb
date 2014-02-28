@@ -1,8 +1,13 @@
 <script type="text/template" id="instrument-template">
-  <div class="row">
+  <div class="row" id="instrument-<%%- row %>">
     <div class="large-1 columns instrument">
       <p><%%- name %></p>
     </div>
+    <div class="large-11 columns notes"></div>
+  </div>
+</script>
+<script type="text/template" id="note-template">
+  <div class="note-inner">
   </div>
 </script>
 <%= render "/layouts/navbar" %>
@@ -10,6 +15,11 @@
   <div class="row">
     <div id="kit" class="large-12 columns">
 
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-11 large-offset-1 columns">
+      <div id="play" class="button">play</div>
     </div>
   </div>
 </div>
