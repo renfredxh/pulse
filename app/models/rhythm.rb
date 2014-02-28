@@ -1,5 +1,6 @@
 class Rhythm < ActiveRecord::Base
   has_many :patterns, dependent: :destroy
+  has_many :notes, through: :patterns
   after_save {
     8.times do |row|
       pattern = Pattern.new(
