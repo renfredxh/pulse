@@ -27,13 +27,13 @@ pulse.AppView = Backbone.View.extend({
   },
 
   togglePlay: function() {
-    if (this.playing) {
-      clearInterval(this.playId);
-      this.playing = false;
+    if (pulse.playing) {
+      clearInterval(pulse.playId);
+      pulse.playing = false;
       this.$play.html('<i class="fa fa-play"></i>');
     } else {
-      this.playId = this.play();
-      this.playing = true;
+      pulse.playId = this.play();
+      pulse.playing = true;
       this.$play.html('<i class="fa fa-pause"></i>');
     }
   },
