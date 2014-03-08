@@ -22,12 +22,18 @@
   height: 3.4rem;
   display: inline-block;
   box-padding: border-box;
+  cursor: pointer;
 
   .note-inner {
     height: 100%;
     margin: .2rem .2rem;
-    border: solid 2px #164B7A;
     border-radius: 6px;
     background-color: #67BEF0;
   }
+  .inactive {
+    background-color: #f5f5f5;
+  }
+}
+.controls {
+  margin-top: .6rem;
 }

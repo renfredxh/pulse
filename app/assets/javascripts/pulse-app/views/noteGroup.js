@@ -3,7 +3,8 @@ var pulse = pulse || {};
 pulse.NoteGroupView = Backbone.View.extend({
 
   initialize: function() {
-    this.addAll();
+    this.collection.on('change', this.generateAudio, this);
+    this.collection.on('reset', this.addAll, this);
     this.generateAudio();
   },
 
@@ -14,14 +15,13 @@ pulse.NoteGroupView = Backbone.View.extend({
   },
 
   addAll: function() {
-    console.log("called");
     this.collection.each(this.addOne, this);
   },
 
   generateAudio: function () {
     var samples = [];
     this.collection.forEach(function(note) {
-      if ( !note.active && note.get('sample') ) {
+      if ( note.get('active') && note.get('sample') ) {
         var sound = new buzz.sound(note.get('sample'), {
           formats: [ "ogg", "mp3", "wav" ]
         });

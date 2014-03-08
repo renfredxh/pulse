@@ -26,8 +26,14 @@ pulse.AppView = Backbone.View.extend({
   },
 
   play: function() {
-    notes = pulse.noteGroupViews[0];
-    notes.playAudio();
+    var i = 0;
+    setInterval(function() {
+      notes = pulse.noteGroupViews[i];
+      notes.playAudio();
+      i += 1;
+      // Reset counter at the end of the phrase
+      i = i > 15 ? 0 : i;
+    }, 200);
   }
 
 });

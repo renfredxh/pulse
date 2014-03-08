@@ -7,7 +7,7 @@
   </div>
 </script>
 <script type="text/template" id="note-template">
-  <div class="note-inner">
+<div class="note-inner <%% active ? null : print('inactive') %>">
   </div>
 </script>
 <%= render "/layouts/navbar" %>
@@ -17,7 +17,7 @@
 
     </div>
   </div>
-  <div class="row">
+  <div id="controls" class="row controls">
     <div class="large-11 large-offset-1 columns">
       <div id="play" class="button">play</div>
     </div>

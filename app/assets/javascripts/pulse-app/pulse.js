@@ -4,15 +4,21 @@ $(document).ready(function() {
     kit = data;
   }).done(function() {
     pulse.Kit.reset(kit.instruments);
+
+    pulse.noteGroupViews = [];
+    $.getJSON("/rhythms/2.json").done(function(data) {
+      $.each(data.columns, function(idx, column) {
+        // Initialize a new noteGroup. The noteGroup is reset after the view is created
+        // so that the view's reset callback can be fired, preventing asyncronyous issues
+        // with rendering.
+        var noteGroup = new pulse.NoteGroup();
+        pulse.noteGroupViews.push(new pulse.NoteGroupView({collection: noteGroup}));
+        noteGroup.reset(column.notes);
+      });
   });
 
-  pulse.noteGroupViews = [];
-  $.getJSON("/rhythms/2.json").done(function(data) {
-    $.each(data.columns, function(idx, column) {
-      var noteGroup = new pulse.NoteGroup(column.notes);
-      pulse.noteGroupViews.push(new pulse.NoteGroupView({collection: noteGroup}));
-    });
   });
+
 
   $(function() {
     new pulse.AppView();
