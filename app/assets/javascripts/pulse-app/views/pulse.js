@@ -45,7 +45,7 @@ pulse.AppView = Backbone.View.extend({
       notes.playAudio();
       i += 1;
       // Reset counter at the end of the phrase
-      i = i > 14 ? 0 : i;
+      i = i > 15 ? 0 : i;
     }, 200);
     return intervId;
   }
