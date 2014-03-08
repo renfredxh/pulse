@@ -23,6 +23,7 @@
   display: inline-block;
   box-padding: border-box;
   cursor: pointer;
+  opacity: 0.75;
 
   .note-inner {
     height: 100%;
@@ -31,7 +32,7 @@
     background-color: #67BEF0;
   }
   .inactive {
-    background-color: #f5f5f5;
+    background-color: #efefef;
   }
 }
 .controls {

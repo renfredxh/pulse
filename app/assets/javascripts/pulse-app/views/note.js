@@ -9,6 +9,7 @@ pulse.NoteView = Backbone.View.extend({
 
   initialize: function() {
     this.model.on('change', this.render, this);
+    this.model.on('play', this.play, this);
   },
 
   events: {
@@ -25,5 +26,12 @@ pulse.NoteView = Backbone.View.extend({
     // Toggle the active status of a note
     var current = this.model.get('active');
     this.model.set('active', !current);
+  },
+
+  play: function(){
+    if (this.model.get('active')) {
+     var opacity = this.$el.css('opacity');
+     this.$el.fadeTo(100, 1).fadeTo(100, opacity);
+    }
   }
 });

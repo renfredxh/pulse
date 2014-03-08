@@ -34,6 +34,9 @@ pulse.NoteGroupView = Backbone.View.extend({
 
   playAudio: function() {
     this.audio.play();
+    this.collection.forEach(function(note) {
+      note.trigger('play');
+    });
   }
 
 });
