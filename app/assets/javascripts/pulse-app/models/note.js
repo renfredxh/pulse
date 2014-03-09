@@ -1,4 +1,4 @@
-var pulse = pulse || {}
+var pulse = pulse || {};
 
 pulse.Note = Backbone.Model.extend({
 
