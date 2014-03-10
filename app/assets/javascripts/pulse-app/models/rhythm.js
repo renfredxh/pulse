@@ -1,11 +1,16 @@
-var pulse = pulse || {}
+var pulse = pulse || {};
 
-pulse.Rhythm = Backbone.Model.extend({
+var Rhythm = Backbone.Model.extend({
+
+  urlRoot: '/rhythms',
+
+  defaults: {
+    playing: false,
+  },
 
   initialize: function() {
-    var notes = pulse.NoteGroup(this.get('notes'))
-    this.set('notes', notes);
-    this.set('sample', sample);
   }
 
 });
+
+pulse.Rhythm = new Rhythm();
