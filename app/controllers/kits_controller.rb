@@ -11,6 +11,7 @@ except: [:index, :show]
   # GET /kits.json
   def index
     @kits = Kit.all
+    @rhythms = Rhythm.all
   end
 
   def admin
