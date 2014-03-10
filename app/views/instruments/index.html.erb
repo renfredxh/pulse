@@ -2,7 +2,7 @@
     <div class="small-12 columns">
       <h1>Instruments</h1>
       <% @instruments.each do |instrument| %>
-        <div class="instrument">
+        <div class="instrument-pad">
           <div class="title"><%= instrument.name %></div>
           <div class="trigger-pad <%= instrument.category %>" 
             data-audio="<%= instrument.sample %>" id="<%= instrument.id %>"></div>
