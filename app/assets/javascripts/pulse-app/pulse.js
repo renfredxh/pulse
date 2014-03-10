@@ -23,15 +23,18 @@ function loadRhythm(id) {
   });
 }
 
-(function() {
+function loadKit(id, options) {
   var kit;
-  $.getJSON("/kits/1.json", function(data){
+  $.getJSON("/kits/" + id + ".json", function(data) {
     kit = data;
   }).done(function() {
     pulse.Kit.reset(kit.instruments);
-    loadRhythm(2);
+    loadRhythm(options.rhythmId || pulse.rhythm.get('id'));
   });
-})();
+}
+
+// Load an initial kit and rhythm
+loadKit(1, {rhythmId: 2});
 
 $(document).ready(function() {
 
