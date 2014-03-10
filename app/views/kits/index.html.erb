@@ -10,6 +10,16 @@
 <div class="note-inner <%% active ? null : print('inactive') %>">
   </div>
 </script>
+<script type="text/template" id="rhythm-template">
+  <div class="large-2 large-offset-1 columns">
+    <div id="play" class="button"><i class="fa fa-play"></i></div>
+  </div>
+  <div class="large-2 columns bpm">
+    <label>BPM
+      <input id="bpm" type="number" value="<%%- bpm %>" />
+    </label>
+  </div>
+</script>
 <%= render "/layouts/navbar" %>
 <div id="pulse-view">
   <div class="row">

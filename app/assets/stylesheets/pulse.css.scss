@@ -37,6 +37,10 @@
 }
 .controls {
   margin-top: .6rem;
+
+  .bpm {
+    float: left !important;
+  }
   label {
     font-size: .8rem;
   }

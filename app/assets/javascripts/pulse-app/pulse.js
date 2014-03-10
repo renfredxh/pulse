@@ -1,7 +1,8 @@
-function loadRhythm() {
-  pulse.Rhythm.set('id', 2);
-  pulse.Rhythm.fetch({
+function loadRhythm(id) {
+  pulse.rhythm = new pulse.Rhythm({id: id});
+  pulse.rhythm.fetch({
     success: function(rhythm) {
+      pulse.Kit.trigger('removeNotes');
       var noteGroupViews = [];
       $.each(rhythm.get('columns'), function(idx, column) {
         // Initialize a new noteGroup. The noteGroup is reset after the view is created
@@ -12,7 +13,12 @@ function loadRhythm() {
         noteGroup.reset(column.notes);
       });
       rhythm.set('noteGroupViews', noteGroupViews);
-      new pulse.RhythmView({model: rhythm});
+      if (pulse.rhythmView) {
+        // Clear existing rhythm views
+        pulse.rhythmView.remove();
+      }
+      $('#controls').prepend('<div id="rhythm-controls"></div>');
+      pulse.rhythmView = new pulse.RhythmView({model: rhythm});
     }
   });
 }
@@ -23,7 +29,7 @@ function loadRhythm() {
     kit = data;
   }).done(function() {
     pulse.Kit.reset(kit.instruments);
-    loadRhythm();
+    loadRhythm(2);
   });
 })();
 
@@ -31,6 +37,10 @@ $(document).ready(function() {
 
   $(function() {
     new pulse.AppView();
+  });
+
+  $('#rhythm-select').change(function() {
+    loadRhythm($(this).val());
   });
 
 });

@@ -1,6 +1,6 @@
 var pulse = pulse || {};
 
-var Rhythm = Backbone.Model.extend({
+pulse.Rhythm = Backbone.Model.extend({
 
   urlRoot: '/rhythms',
 
@@ -12,5 +12,3 @@ var Rhythm = Backbone.Model.extend({
   }
 
 });
-
-pulse.Rhythm = new Rhythm();

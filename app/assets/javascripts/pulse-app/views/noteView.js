@@ -10,6 +10,7 @@ pulse.NoteView = Backbone.View.extend({
   initialize: function() {
     this.model.on('change', this.render, this);
     this.model.on('play', this.play, this);
+    this.model.on('destroy', this.remove, this);
   },
 
   events: {

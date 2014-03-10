@@ -1,19 +1,26 @@
 var pulse = pulse || {};
 
-// Our overall **AppView** is the top-level piece of UI.
 pulse.RhythmView = Backbone.View.extend({
 
-  el: '#controls',
+  el: '#rhythm-controls',
+
+  template: _.template($('#rhythm-template').html()),
 
   initialize: function() {
-    this.$play = this.$('#play');
+    this.render();
     this.$bpm = this.$('#bpm');
-    this.$bpm.val(this.model.get('bpm'));
+    this.$play = this.$('#play');
   },
 
   events: {
     'click #play': 'togglePlay',
     'change #bpm': 'updateBpm'
+  },
+
+  render: function() {
+    this.$el.html('');
+    this.$el.append(this.template(this.model.toJSON()));
+    return this;
   },
 
   togglePlay: function() {
@@ -46,7 +53,7 @@ pulse.RhythmView = Backbone.View.extend({
       i = i > 15 ? 0 : i;
     }, tempo);
     return intervId;
-  }
+  },
 
 });
 

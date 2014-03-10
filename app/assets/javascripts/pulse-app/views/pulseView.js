@@ -8,11 +8,6 @@ pulse.AppView = Backbone.View.extend({
   initialize: function() {
     this.listenTo(pulse.Kit, 'add', this.addOne);
     this.listenTo(pulse.Kit, 'reset', this.addAll);
-    this.$play = this.$('#play');
-  },
-
-  events: {
-    'click #play': 'togglePlay'
   },
 
   addOne: function(instrument) {
