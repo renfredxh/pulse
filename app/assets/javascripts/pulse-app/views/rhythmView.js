@@ -7,10 +7,13 @@ pulse.RhythmView = Backbone.View.extend({
 
   initialize: function() {
     this.$play = this.$('#play');
+    this.$bpm = this.$('#bpm');
+    this.$bpm.val(this.model.get('bpm'));
   },
 
   events: {
-    'click #play': 'togglePlay'
+    'click #play': 'togglePlay',
+    'change #bpm': 'updateBpm'
   },
 
   togglePlay: function() {
@@ -25,16 +28,23 @@ pulse.RhythmView = Backbone.View.extend({
     }
   },
 
+  updateBpm: function () {
+    this.togglePlay();
+    this.model.set('bpm', this.$bpm.val());
+    this.togglePlay();
+  },
+
   play: function() {
-    var i = 0;
     var noteGroupViews = this.model.get('noteGroupViews');
+    var tempo = (1000/(this.model.get('bpm')/60))/4;
+    var i = 0;
     var intervId = setInterval(function() {
       notes = noteGroupViews[i];
       notes.playAudio();
       i += 1;
       // Reset counter at the end of the phrase
       i = i > 15 ? 0 : i;
-    }, 200);
+    }, tempo);
     return intervId;
   }
 
