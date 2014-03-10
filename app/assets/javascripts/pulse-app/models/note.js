@@ -10,7 +10,7 @@ pulse.Note = Backbone.Model.extend({
   initialize: function() {
     // Store the sample of the corresponding instrument
     // locally in this model
-    var instrument = pulse.Kit.get(this.get('row'));
+    var instrument = pulse.Kit.at(this.get('row'));
     if (instrument) {
       var sample = instrument.get('sample');
       this.set('sample', sample);
