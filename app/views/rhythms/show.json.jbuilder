@@ -1,4 +1,4 @@
-json.extract! @rhythm, :id, :name
+json.extract! @rhythm, :id, :name, :bpm
 json.columns [*0..15] do |position|
   json.position position
   # Select all notes of a particular position and group them together

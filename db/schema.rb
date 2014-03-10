@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224030322) do
+ActiveRecord::Schema.define(version: 20140310000253) do
 
   create_table "DrumSets_Instruments", id: false, force: true do |t|
     t.integer "instrument_id", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140224030322) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "bpm"
   end
 
   create_table "samples", force: true do |t|
