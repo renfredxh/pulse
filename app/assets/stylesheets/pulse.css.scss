@@ -1,6 +1,7 @@
 #kit {
   margin-top: 2rem;
 }
+
 .instrument {
   height: 3.8rem;
   display: flex;
@@ -15,14 +16,18 @@
   &:hover {
     background-color: darken(#333333, 5%);
   }
+
   p {
     margin-bottom: 0;
   }
 }
+
 .notes {
   margin-bottom: 0;
 }
+
 $inactive-note-color: #f0f0f0;
+
 .note {
   width: 6.15%;
   height: 3.4rem;
@@ -37,22 +42,27 @@ $inactive-note-color: #f0f0f0;
     border-radius: 6px;
     background-color: #67BEF0;
   }
+
   .inactive {
-    background-color: $inactive-note-color;;
+    background-color: $inactive-note-color;
+
     &:hover {
       background-color: darken($inactive-note-color, 5%);
     }
   }
 }
+
 .controls {
   margin-top: .6rem;
 
   .bpm {
     float: left !important;
   }
+
   label {
     font-size: .8rem;
   }
+
   .button {
     margin-top: .37rem;
   }
