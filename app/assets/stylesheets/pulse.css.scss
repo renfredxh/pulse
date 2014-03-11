@@ -10,6 +10,11 @@
   background-color: #333333;
   color: #ffffff;
   border-bottom: solid #141414 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#333333, 5%);
+  }
   p {
     margin-bottom: 0;
   }
@@ -17,13 +22,14 @@
 .notes {
   margin-bottom: 0;
 }
+$inactive-note-color: #f0f0f0;
 .note {
   width: 6.15%;
   height: 3.4rem;
   display: inline-block;
   box-padding: border-box;
   cursor: pointer;
-  opacity: 0.75;
+  opacity: 0.7;
 
   .note-inner {
     height: 100%;
@@ -32,7 +38,10 @@
     background-color: #67BEF0;
   }
   .inactive {
-    background-color: #efefef;
+    background-color: $inactive-note-color;;
+    &:hover {
+      background-color: darken($inactive-note-color, 5%);
+    }
   }
 }
 .controls {
