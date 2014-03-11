@@ -46,4 +46,8 @@ $(document).ready(function() {
     loadRhythm($(this).val());
   });
 
+  $('#kit-select').change(function() {
+    loadKit($(this).val(), pulse.rhythm.get('id'));
+  });
+
 });
