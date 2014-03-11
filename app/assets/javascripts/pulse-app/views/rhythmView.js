@@ -25,14 +25,22 @@ pulse.RhythmView = Backbone.View.extend({
 
   togglePlay: function() {
     if (this.model.get('playing')) {
-      clearInterval(this.model.get('playId'));
-      this.model.set('playing', false);
-      this.$play.html('<i class="fa fa-play"></i>');
+      this.pause();
     } else {
-      this.model.set('playId', this.play());
-      this.model.set('playing', true);
-      this.$play.html('<i class="fa fa-pause"></i>');
+      this.play();
     }
+  },
+
+  play: function() {
+    this.model.set('playId', this.loopRhythm());
+    this.model.set('playing', true);
+    this.$play.html('<i class="fa fa-pause"></i>');
+  },
+
+  pause: function() {
+    clearInterval(this.model.get('playId'));
+    this.model.set('playing', false);
+    this.$play.html('<i class="fa fa-play"></i>');
   },
 
   updateBpm: function () {
@@ -41,7 +49,7 @@ pulse.RhythmView = Backbone.View.extend({
     this.togglePlay();
   },
 
-  play: function() {
+  loopRhythm: function() {
     var noteGroupViews = this.model.get('noteGroupViews');
     var tempo = (1000/(this.model.get('bpm')/60))/4;
     var i = 0;
