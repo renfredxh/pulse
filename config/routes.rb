@@ -1,4 +1,6 @@
 Pulse::Application.routes.draw do
+  root to: "kits#index"
+
   resources :rhythms
 
   resources :kits do
