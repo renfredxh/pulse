@@ -14,6 +14,7 @@ function loadRhythm(id) {
       });
       rhythm.set('noteGroupViews', noteGroupViews);
       if (pulse.rhythmView) {
+        pulse.rhythmView.pause();
         // Clear existing rhythm views
         pulse.rhythmView.remove();
       }
