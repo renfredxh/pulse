@@ -26,7 +26,13 @@
   margin-bottom: 0;
 }
 
+$note-color:          #34495e;
 $inactive-note-color: #f0f0f0;
+$hi-hat-note-color:   #FFDc52;
+$snare-note-color:    #e74c3c;
+$kick-note-color:     #3498db;
+$tom-note-color:      #9b59b6;
+$crash-note-color:    #1abc9c;
 
 .note {
   width: 6.15%;
@@ -40,7 +46,7 @@ $inactive-note-color: #f0f0f0;
     height: 100%;
     margin: .2rem .2rem;
     border-radius: 6px;
-    background-color: #67BEF0;
+    background-color: $note-color;
   }
 
   .inactive {
@@ -50,6 +56,26 @@ $inactive-note-color: #f0f0f0;
       background-color: darken($inactive-note-color, 5%);
     }
   }
+}
+
+.hi-hats .note-inner:not(.inactive) {
+  background-color: $hi-hat-note-color;
+}
+
+.snare .note-inner:not(.inactive) {
+  background-color: $snare-note-color;
+}
+
+.kick .note-inner:not(.inactive) {
+  background-color: $kick-note-color;
+}
+
+.tom .note-inner:not(.inactive) {
+  background-color: $tom-note-color;
+}
+
+.crash .note-inner:not(.inactive) {
+  background-color: $crash-note-color;
 }
 
 .controls {
