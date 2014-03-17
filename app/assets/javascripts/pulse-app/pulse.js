@@ -35,7 +35,7 @@ function loadKit(id, options) {
 }
 
 // Load an initial kit and rhythm
-loadKit(1, {rhythmId: 2});
+loadKit(1, {rhythmId: 4});
 
 $(document).ready(function() {
 
