@@ -4,9 +4,9 @@ pulse.NoteGroupView = Backbone.View.extend({
 
   initialize: function() {
     this.collection.on('change', this.generateAudio, this);
+    this.collection.on('reset', this.generateAudio, this);
     this.collection.on('reset', this.addAll, this);
     pulse.Kit.on('removeNotes', this.removeAll, this);
-    this.generateAudio();
   },
 
   addOne: function(note) {
