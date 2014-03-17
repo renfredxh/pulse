@@ -33,6 +33,7 @@ $snare-note-color:    #e74c3c;
 $kick-note-color:     #3498db;
 $tom-note-color:      #9b59b6;
 $crash-note-color:    #1abc9c;
+$ride-note-color:     #e67e22;
 
 .note {
   width: 6.15%;
@@ -58,7 +59,7 @@ $crash-note-color:    #1abc9c;
   }
 }
 
-.hi-hats .note-inner:not(.inactive) {
+.hi-hat .note-inner:not(.inactive) {
   background-color: $hi-hat-note-color;
 }
 
@@ -76,6 +77,10 @@ $crash-note-color:    #1abc9c;
 
 .crash .note-inner:not(.inactive) {
   background-color: $crash-note-color;
+}
+
+.ride .note-inner:not(.inactive) {
+  background-color: $ride-note-color;
 }
 
 .controls {
