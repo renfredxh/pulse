@@ -10,6 +10,9 @@ pulse.RhythmView = Backbone.View.extend({
     this.render();
     this.$bpm = this.$('#bpm');
     this.$play = this.$('#play');
+    // Create event binding for keypress to trigger togglePlay
+    _.bindAll(this, 'togglePlay');
+    $(document).bind('keypress', this.togglePlay);
   },
 
   events: {
@@ -23,11 +26,15 @@ pulse.RhythmView = Backbone.View.extend({
     return this;
   },
 
-  togglePlay: function() {
-    if (this.model.get('playing')) {
-      this.pause();
-    } else {
-      this.play();
+  togglePlay: function(e) {
+    // Play if event e.which is a mouse click (1)
+    // or the space bar (32) or if there is no event object
+    if (e === undefined || {1: true, 32: true}[e.which]) {
+      if (this.model.get('playing')) {
+        this.pause();
+      } else {
+        this.play();
+      }
     }
   },
 
