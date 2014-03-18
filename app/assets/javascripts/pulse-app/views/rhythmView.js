@@ -1,5 +1,8 @@
 var pulse = pulse || {};
 
+// View represeting the controls section of the pulse app. This view's
+// element contains elements responsible for controling the playing/pausing
+// of the current rhythm, as well as changing the BPM.
 pulse.RhythmView = Backbone.View.extend({
 
   el: '#rhythm-controls',
@@ -49,15 +52,19 @@ pulse.RhythmView = Backbone.View.extend({
     this.togglePlay();
   },
 
+  // Set an interval to play a each note group in a rhythm at it's
+  // given bpm. Return the interval id.
   loopRhythm: function() {
     var noteGroupViews = this.model.get('noteGroupViews');
+    // Tempo is equivalent to a sixteenth note represented in milliseconds.
+    // (1000ms / (quarter notes per minute)/(60 seconds)) / 4
     var tempo = (1000/(this.model.get('bpm')/60))/4;
     var i = 0;
     var intervId = setInterval(function() {
       notes = noteGroupViews[i];
       notes.playAudio();
       i += 1;
-      // Reset counter at the end of the phrase
+      // Reset counter at the end of the 16 note phrase
       i = i > 15 ? 0 : i;
     }, tempo);
     return intervId;
