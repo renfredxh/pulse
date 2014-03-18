@@ -1,3 +1,4 @@
+pulse = pulse || {};
 function loadRhythm(id) {
   pulse.rhythm = new pulse.Rhythm({id: id});
   pulse.rhythm.fetch({
