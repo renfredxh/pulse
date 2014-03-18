@@ -1,4 +1,7 @@
 pulse = pulse || {};
+// Automatically load all audio
+buzz.defaults.preload = 'auto';
+
 function loadRhythm(id) {
   pulse.rhythm = new pulse.Rhythm({id: id});
   pulse.rhythm.fetch({
