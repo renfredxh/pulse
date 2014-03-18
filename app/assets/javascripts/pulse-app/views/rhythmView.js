@@ -52,7 +52,7 @@ pulse.RhythmView = Backbone.View.extend({
     this.togglePlay();
   },
 
-  // Set an interval to play a each note group in a rhythm at it's
+  // Set an interval to play a each note group in a rhythm at its
   // given bpm. Return the interval id.
   loopRhythm: function() {
     var noteGroupViews = this.model.get('noteGroupViews');
