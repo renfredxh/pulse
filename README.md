@@ -2,7 +2,7 @@ Pulse
 ===
 Pulse is an interactive web-based rhythm editor built with Rails and Bankbone.js. I built it mainly for fun, as well as to showcase the capabilities of dynamically loading and playing synchronous audio via a client-side Javascript application.
 
-Demo - [pulse.renfredh.in](http://pulse.renfredh.in/)
+Demo - [pulse.renf.red](http://pulse.renf.red/)
 
 # API
 
