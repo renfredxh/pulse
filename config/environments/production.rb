@@ -44,6 +44,10 @@ Pulse::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get(
+    ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO'
+  )
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
