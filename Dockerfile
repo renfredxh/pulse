@@ -13,7 +13,6 @@ RUN bash -c -l "rvm install 2.1"
 RUN bash -c -l "gem install bundler rake --no-ri --no-rdoc"
 RUN bash -c -l "bundle config path \"$HOME/bundler\""
 
-RUN "echo"
 RUN git clone https://github.com/renfredxh/pulse.git
 WORKDIR /pulse
 
