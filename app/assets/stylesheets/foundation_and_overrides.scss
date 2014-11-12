@@ -26,6 +26,13 @@
 // $include-print-styles: true;
 // $include-html-global-classes: $include-html-classes;
 
+// We use these as default colors throughout
+$primary-color: #9b59b6;
+// $secondary-color: #e7e7e7;
+// $alert-color: #f04124;
+// $success-color: #43AC6A;
+// $warning-color: #f08a24;
+// $info-color: #a0d3e8;
 // Grid
 
 // $include-html-grid-classes: $include-html-classes;
@@ -36,7 +43,7 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
+$body-bg: lighten($primary-color, 46);
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -50,13 +57,6 @@
 // $opposite-direction: right;
 // $default-float: left;
 
-// We use these as default colors throughout
-$primary-color: #3686be;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -1123,7 +1123,7 @@ $primary-color: #3686be;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #9b59b6;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
