@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-RUN apt-get update && apt-get -qy install curl nano git build-essential \
+RUN apt-get update && apt-get -qy install curl nano git build-essential unzip \
 nodejs sqlite3 libsqlite3-dev
 
 ## Install ruby using rvm
@@ -18,7 +18,8 @@ WORKDIR /pulse
 
 # Download the default sqlite database and samples
 ADD https://dl.dropboxusercontent.com/u/3672377/data/pulse/production.sqlite3 /pulse/db/production.sqlite3
-ADD https://dl.dropboxusercontent.com/u/3672377/data/pulse/media.zip /pulse/public/media
+ADD https://dl.dropboxusercontent.com/u/3672377/data/pulse/media.zip /pulse/public/
+RUN unzip /pulse/public/media
 
 RUN bash -c -l "bundle install"
 
