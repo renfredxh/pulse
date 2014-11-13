@@ -16,12 +16,12 @@ RUN bash -c -l "bundle config path \"$HOME/bundler\""
 RUN git clone https://github.com/renfredxh/pulse.git
 WORKDIR /pulse
 
+RUN bash -c -l "bundle install"
+
 # Download the default sqlite database and samples
 ADD https://dl.dropboxusercontent.com/u/3672377/data/pulse/production.sqlite3 /pulse/db/production.sqlite3
-ADD https://dl.dropboxusercontent.com/u/3672377/data/pulse/media.zip /pulse/public/
-RUN unzip /pulse/public/media
-
-RUN bash -c -l "bundle install"
+ADD https://dl.dropboxusercontent.com/u/3672377/data/pulse/media.tar.gz /pulse/public/
+RUN mkdir /pulse/public/media && tar -zxvf /pulse/public/media.tar.gz -C /pulse/public/
 
 EXPOSE 80
 # Run unicorn server on port 80
